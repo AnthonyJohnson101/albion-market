@@ -1,0 +1,16 @@
+{
+  "name": "albion-market-worker",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "mongodb": "^6.5.0",
+    "nats": "^3.2.2"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
