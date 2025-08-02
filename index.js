@@ -1,20 +1,13 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
-import dotenv from 'dotenv';
-import { connect, StringCodec } from 'nats';
-import { MongoClient } from 'mongodb';
-import fs from 'fs/promises';
-
-// Get current directory path
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Load environment variables
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 if (!process.env.MONGO_URI) {
   console.error("❌ MONGO_URI is not defined in .env file");
   process.exit(1);
 }
+
+const { connect, StringCodec } = require("nats");
+const { MongoClient } = require("mongodb");
+const fs = require("fs").promises;
 
 // Configuration
 const MONGO_URI = process.env.MONGO_URI
