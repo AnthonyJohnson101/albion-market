@@ -59,7 +59,11 @@ let itemNameMap = new Map();
     }
 
     // Connect to MongoDB
-    mongoClient = new MongoClient(MONGO_URI);
+    mongoClient = new MongoClient(MONGO_URI, {
+      tls: true,
+      tlsAllowInvalidCertificates: false,
+      minTlsVersion: 'TLSv1.2'
+    });
     await mongoClient.connect();
     console.log("✅ Connected to MongoDB");
     const db = mongoClient.db(DB_NAME);
