@@ -2,7 +2,7 @@
   "name": "albion-market-worker",
   "version": "1.0.0",
   "scripts": {
-    "start": "node index.js"
+    "start": "npm i && node index.js"
   },
   "dependencies": {
     "dotenv": "^16.4.0",
